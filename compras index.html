@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Compras - Eletropel</title>
+    <!-- Incluir o CSS das Telas -->
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.oculto {
+    display: none;
+}
+
+#tela2, #tela3, #tela4 {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 180%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #c40000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #ff7878;
+    transition: 0.8s;
+}
+
+#totalReceived {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#currentDate {
+    text-align: right;
+    margin-bottom: 20px;
+}
+.fixed-button {
+    position: fixed;
+    bottom: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+}
+
+</style>
+
+</head>
+
+<body>
+    <!-- Conteúdo da Tela 1-->
+    <div id="tela1" class="tela">
+        <h2>O que deseja fazer?</h2>
+        <button id="botaoOpcao1">Registrar Compras</button>
+        <button id="botaoOpcao2">Registrar Negociaçoes Especiais</button>
+        <button id="botaoOpcao3">Registrar Divergencias</button>
+        <button id="botaoOpcao4">Atividades Dep. Compras</button>
+    </div>
+
+    <!-- Conteúdo da Tela 2-->
+    <div id="tela2" class="oculto">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSee3TXoudczDt5mW1jwy1B8TUXKPwnLoVbUcaVFjxHnaxq8lA/viewform?embedded=true" width="1000" height="1200" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        <button class="fixed-button" onclick="voltarAoInicio()">Voltar ao Início</button>
+    </div>
+
+    <!-- Conteúdo da Tela 3-->
+    <div id="tela3" class="oculto">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJbCO-yawZXndYh_HvL69UIWU456-ZZNiwSnxjOL4YwbXiqA/viewform?embedded=true" width="1000" height="1200" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        <button class="fixed-button" onclick="voltarAoInicio()">Voltar ao Início</button>
+    </div>
+
+    <!-- Conteúdo da Tela 4-->
+    <div id="tela4" class="oculto">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScgIjinnXaHuQhbZjKqdlUjA3mtYBhRV7A8Q-uJCowUWJv3OQ/viewform?embedded=true" width="1000" height="1200" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        <button class="fixed-button" onclick="voltarAoInicio()">Voltar ao Início</button>
+    </div>
+
+    <!-- Conteúdo da Tela 5-->
+    <div id="tela5" class="oculto">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecB7mBGx-FkOK-fsnwLOnpHQ-Vk8KfFNuY-L-yNldJ51Jlkg/viewform?embedded=true" width="1000" height="1200" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        <button class="fixed-button" onclick="voltarAoInicio()">Voltar ao Início</button>
+    </div>
+
+</div>
+
+    <script>
+        // Referências aos elementos HTML
+        const tela1 = document.getElementById('tela1');
+        const tela2 = document.getElementById('tela2');
+        const tela3 = document.getElementById('tela3');
+        const tela4 = document.getElementById('tela4');
+        const tela5 = document.getElementById('tela5');
+
+        const botaoOpcao1 = document.getElementById('botaoOpcao1');
+        const botaoOpcao2 = document.getElementById('botaoOpcao2');
+        const botaoOpcao3 = document.getElementById('botaoOpcao3');
+        const botaoOpcao4 = document.getElementById('botaoOpcao4');
+
+        // Adicionando eventos aos botões
+        botaoOpcao1.addEventListener('click', function() {
+            tela1.classList.add('oculto');
+            tela2.classList.remove('oculto');
+        });
+
+        botaoOpcao2.addEventListener('click', function() {
+            tela1.classList.add('oculto');
+            tela3.classList.remove('oculto');
+        });
+
+        botaoOpcao3.addEventListener('click', function() {
+            tela1.classList.add('oculto');
+            tela4.classList.remove('oculto');
+        });
+
+        botaoOpcao4.addEventListener('click', function() {
+            tela1.classList.add('oculto');
+            tela5.classList.remove('oculto');
+        });
+
+        // Função para voltar à tela anterior
+        function voltarAoInicio() {
+            tela2.classList.add('oculto');
+            tela3.classList.add('oculto');
+            tela4.classList.add('oculto');
+            tela5.classList.add('oculto');
+            tela1.classList.remove('oculto');
+        }
+    </script>
+</body>
+
+</html>
